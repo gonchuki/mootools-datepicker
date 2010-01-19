@@ -195,9 +195,9 @@ var DatePicker = new Class({
 				init_visual_date = new Date(this.options.minDate.valueOf());
 			}
 		}
-		this.show({ left: d.left + this.options.positionOffset.x, top: d.top + d.height + this.options.positionOffset.y }, init_visual_date);
 		this.input = original_input;
 		this.visual = visual_input;
+		this.show({ left: d.left + this.options.positionOffset.x, top: d.top + d.height + this.options.positionOffset.y }, init_visual_date);
 		this.fireEvent('show');
 	},
 	
