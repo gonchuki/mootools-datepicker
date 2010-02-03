@@ -1,4 +1,4 @@
-/**
+﻿/**
  * datepicker.js - MooTools Datepicker class
  * @version 1.16
  * 
@@ -617,7 +617,7 @@ var DatePicker = new Class({
 		var d = this.dateFromObject(this.choice);
 		this.input.set('value', this.format(d, this.options.inputOutputFormat));
 		this.visual.set('value', this.format(d, this.options.format));
-		this.fireEvent('select', this, [d]);
+		this.fireEvent('select', d);
 		this.close(null, true);
 	},
 	
