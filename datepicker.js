@@ -111,10 +111,9 @@ var DatePicker = new Class({
 				}.bind(this)
 			});
 		};
-		
+
 		// attach functionality to the inputs		
-		$$(this.attachTo).each(function(item, index) {
-			
+		document.getElements(this.attachTo).each(function(item, index) {
 			// never double attach
 			if (item.retrieve('datepicker')) return;
 			
@@ -585,7 +584,7 @@ var DatePicker = new Class({
 	},
 	
 	close: function(e, force) {
-		if (!$(this.picker)) return;
+		if (!document.id(this.picker)) return;
 		var clickOutside = ($chk(e) && e.target != this.picker && !this.picker.hasChild(e.target) && e.target != this.visual);
 		if (force || clickOutside) {
 			if (this.options.useFadeInOut) {
