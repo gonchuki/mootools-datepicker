@@ -578,6 +578,7 @@ var DatePicker = new Class({
 			this.d.setMonth(this.d.getMonth() - 1);
 		}
 		this.render('left');
+		this.fireEvent('previous');
 	},
 	
 	next: function() {
@@ -590,6 +591,7 @@ var DatePicker = new Class({
 			this.d.setMonth(this.d.getMonth() + 1);
 		}
 		this.render('right');
+		this.fireEvent('next');
 	},
 	
 	close: function(e, force) {
