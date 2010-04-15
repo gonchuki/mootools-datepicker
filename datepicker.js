@@ -109,7 +109,7 @@ var DatePicker = new Class({
 	
 	attach: function() {
 		// toggle the datepicker through a separate element?
-		if ($chk(this.options.toggleElements)) {
+		if (this.options.toggleElements) {
 			var togglers = document.getElements(this.options.toggleElements);
 			document.addEvents({
 				'keydown': function(e) {
@@ -147,7 +147,7 @@ var DatePicker = new Class({
 			.inject(item, 'after');
 			
 			// events
-			if ($chk(this.options.toggleElements)) {
+			if (this.options.toggleElements) {
 				togglers[index]
 					.setStyle('cursor', 'pointer')
 					.addEvents({
@@ -188,10 +188,10 @@ var DatePicker = new Class({
 			init_visual_date = this.unformat(original_input.get('value'), this.options.inputOutputFormat).valueOf();
 		} else {
 			init_visual_date = new Date();
-			if ($chk(this.options.maxDate) && init_visual_date.valueOf() > this.options.maxDate.valueOf()) {
+			if (this.options.maxDate && init_visual_date.valueOf() > this.options.maxDate.valueOf()) {
 				init_visual_date = new Date(this.options.maxDate.valueOf());
 			}
-			if ($chk(this.options.minDate) && init_visual_date.valueOf() < this.options.minDate.valueOf()) {
+			if (this.options.minDate && init_visual_date.valueOf() < this.options.minDate.valueOf()) {
 				init_visual_date = new Date(this.options.minDate.valueOf());
 			}
 		}
@@ -217,7 +217,7 @@ var DatePicker = new Class({
 		d.setDate(1);
 		['year', 'month', 'day', 'hours', 'minutes', 'seconds'].each(function(type) {
 			var v = values[type];
-			if (!$chk(v)) return;
+			if (!v) return;
 			switch (type) {
 				case 'day': d.setDate(v); break;
 				case 'month': d.setMonth(v); break;
@@ -289,7 +289,7 @@ var DatePicker = new Class({
 		}
 		
 		// animate
-		if ($chk(fx)) this.fx(fx);
+		if (fx) this.fx(fx);
 	},
 	
 	fx: function(fx) {
