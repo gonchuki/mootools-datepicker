@@ -195,7 +195,6 @@ var DatePicker = new Class({
 				init_visual_date = new Date(this.options.minDate.valueOf());
 			}
 		}
-		
 		this.show({ left: d.left + this.options.positionOffset.x, top: d.top + d.height + this.options.positionOffset.y }, init_visual_date);
 		this.input = original_input;
 		this.visual = visual_input;
@@ -233,7 +232,9 @@ var DatePicker = new Class({
 	
 	show: function(position, timestamp) {
 		this.formatMinMaxDates();
-		if ($chk(timestamp)) {
+		if(timestamp instanceof Date){
+			this.d = timestamp;
+		}else if (timestamp) {
 			this.d = new Date(timestamp);
 		} else {
 			this.d = new Date();
@@ -700,7 +701,6 @@ var DatePicker = new Class({
 				t = t.substring(1);
 			}
 		}
-		
 		for (c in a) {
 			var v = a[c].toInt();
 			switch(c) {
