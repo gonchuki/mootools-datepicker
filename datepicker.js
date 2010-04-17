@@ -1,4 +1,4 @@
-﻿/**
+/**
  * datepicker.js - MooTools Datepicker class
  * @version 1.16
  * 
@@ -215,7 +215,7 @@ var DatePicker = new Class({
 		d.setDate(1);
 		['year', 'month', 'day', 'hours', 'minutes', 'seconds'].each(function(type) {
 			var v = values[type];
-			if (!v) return;
+			if (!$chk(v)) return;
 			switch (type) {
 				case 'day': d.setDate(v); break;
 				case 'month': d.setMonth(v); break;
