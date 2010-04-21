@@ -79,11 +79,11 @@ var DatePicker = new Class({
 		this.setOptions(options);
 		
 		if (MooTools.lang) {
-			this.setOptions({
+			this.options = $merge.run([this.options].extend({
 				days: MooTools.lang.get('Date', 'days'),
 				months: MooTools.lang.get('Date', 'months'),
 				format: MooTools.lang.get('Date', 'shortDate')
-			});
+			}));
 		}
 		
 		this.attach();		
