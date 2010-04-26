@@ -157,8 +157,8 @@ var DatePicker = new Class({
 					});
 				clone.addEvents({
 					'blur': function() {
-						item.set('value', clone.get('value'));
-					}
+            item.set('value', this.format(new Date(this.unformat(clone.get('value'), this.options.format)), this.options.inputOutputFormat));
+					}.bind(this)
 				});
 			} else {
 				clone.addEvents({
