@@ -607,7 +607,7 @@ var DatePicker = new Class({
 	destroy: function() {
 		this.picker.destroy();
 		this.picker = null;
-		this.options.onClose();
+		this.fireEvent('close');
 	},
 	
 	select: function(values) {
@@ -615,7 +615,7 @@ var DatePicker = new Class({
 		var d = this.dateFromObject(this.choice);
 		this.input.set('value', this.format(d, this.options.inputOutputFormat));
 		this.visual.set('value', this.format(d, this.options.format));
-		this.options.onSelect(d);
+		this.fireEvent('select', this, [d]);
 		this.close(null, true);
 	},
 	
