@@ -538,7 +538,7 @@ var DatePicker = new Class({
 				
 			case 'month':
 				// todo: there has got to be an easier way...?
-				var ms = ('' + this.d.getFullYear() + this.leadZero(this.d.getMonth())).toInt();
+				var ms = ('' + this.d.getFullYear() + this.leadZero(this.d.getMonth() + 1)).toInt();
 				return cs && ms < ('' + this.options.minDate.getFullYear() + this.leadZero(this.options.minDate.getMonth())).toInt()
 					|| ce && ms > ('' + this.options.maxDate.getFullYear() + this.leadZero(this.options.maxDate.getMonth())).toInt()
 				
